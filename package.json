@@ -1,0 +1,29 @@
+{
+  "name": "Inlämning-nodejs-gästforum-logga in",
+  "version": "1.0.0",
+  "description": "En Node.js gästbok och forum applikation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zainabfarah/Inl-mning-nodejs-g-stforum-logga-in.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "gästbok",
+    "forum"
+  ],
+  "author": "Z Farah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zainabfarah/Inl-mning-nodejs-g-stforum-logga-in/issues"
+  },
+  "homepage": "https://github.com/Zainabfarah/Inl-mning-nodejs-g-stforum-logga-in#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
