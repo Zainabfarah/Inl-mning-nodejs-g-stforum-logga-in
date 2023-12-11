@@ -12,10 +12,13 @@
     <h1>Välkomen till gästboken</h1>
     <form action="/post-message" method="post">
         <input type="text" name="name" placeholder="Ditt namn" required>
+        <input type="tel" name="phone" placeholder="Ditt telefonnummer" required>
+        <input type="email" name="email" placeholder="Din e-post" required>
         <textarea name="message" placeholder="Ditt meddelande" required>
             <button type="submit">Skicka inlägg</button>
         </textarea>
     </form>
 </div>
+<script src="scripts.js"></script>
 </body>
 </html>
