@@ -47,9 +47,8 @@ button{
 button:hover{
     background: #004494;
 }
-@media (max-with: 700px) {
+@media (max-width: 700px) {
     .container {
         padding: 0 10px;
-    }
-    
+    }    
 }
