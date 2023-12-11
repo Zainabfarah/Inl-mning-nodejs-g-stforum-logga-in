@@ -1,18 +1,19 @@
 html, body {
-    font-family: 'open sans', sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     background: url(bakgrund.avif) no-repeat center center fixed;
     background-size: cover;
 }
 .container {
-    width: 40%;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.8);
+    width: 75%;
+    margin: 20px;
+    padding: 40px;
+    background: rgba(237, 217, 230, 0.95);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(10px);
@@ -20,30 +21,45 @@ html, body {
 h1 {
     text-align: center;
     color: #333;
+    font-size: 2.5rem; 
+    margin-bottom: 1rem;
 }
 form {
-     margin: 20px 0;
+     display: flex;
+     flex-direction: column;
 }
 input[type="text"],
 input[type="tel"],
 input[type="email"],
 textarea {
+    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
-   
+    background: #ffffffcc; 
+    border: 1px solid #ccc; 
+    padding: 15px; 
 }
 button{
-    background: #e0619b;
-    color: #fff;
+    padding: 10px 20px; 
+    font-size: 0.9rem; 
+    font-weight: bold;
+    background: #845ec2;
+    color: #ffffff;
     border: none;
-    border-radius: 8px;
+    border-radius: 8px; 
+    cursor: pointer;
     transition: background-color 0.3s ease;
-}
-button:hover{
-    background: #d83f84;
+}    
+button:hover {
+    background: #6f2dab; 
 }
 @media (max-width: 700px) {
     .container {
         width: 80%;
-    }    
+        padding: 20px;
+    }  
+    
+    h1 {
+        font-size: 2rem;
+    }
 }
