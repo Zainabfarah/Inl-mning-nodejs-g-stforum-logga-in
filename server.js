@@ -37,6 +37,6 @@ app.post('/post-message', (req, res) => {
     res.redirect('/');
   });
 
-app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servern körs på port ${PORT}`);
 });

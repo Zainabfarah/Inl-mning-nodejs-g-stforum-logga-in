@@ -21,12 +21,12 @@ html, body {
 h1 {
     text-align: center;
     color: #333;
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 form {
-     display: flex;
-     flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 input[type="text"],
 input[type="tel"],
@@ -36,12 +36,11 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 8px;
     background: #ffffffcc; 
-    border: 1px solid #ccc; 
     padding: 15px; 
 }
 button{
     padding: 10px 20px; 
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
     font-weight: bold;
     background: #845ec2;
     color: #ffffff;
@@ -53,13 +52,43 @@ button{
 button:hover {
     background: #6f2dab; 
 }
-@media (max-width: 700px) {
+@media (max-width: 1024px) {
     .container {
-        width: 80%;
+        width: 85%;
+        padding: 30px;
+    }  
+    
+    h1 {
+        font-size: 2rem; 
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+    }  
+    
+    h1 {
+        font-size: 1.75rem; 
+    }
+    
+    input, button, textarea {
+        font-size: 0.9rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; 
         padding: 20px;
     }  
     
     h1 {
-        font-size: 2rem;
+        font-size: 1.5rem; 
+    }
+    
+    input, button, textarea {
+        font-size: 0.8rem; 
     }
 }
