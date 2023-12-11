@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/Zainabfarah/Inl-mning-nodejs-g-stforum-logga-in#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   }
 }
