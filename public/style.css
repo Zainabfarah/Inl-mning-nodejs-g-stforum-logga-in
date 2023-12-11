@@ -6,7 +6,7 @@ html, body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url(bakgrund.avif) no-repeat center center fixed;
+    background: url(bild.1.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 .container {
