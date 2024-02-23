@@ -15,28 +15,47 @@ app.post('/post-message', (req, res) => {
     
     const { name, phone, email, message } = req.body;
     const newEntry = { name, phone, email, message };
-  
-    fs.readFile(GUESTBOOK_PATH, (err, data) => {
-      if (err && err.code === 'ENOENT') {
-       
-        fs.writeFile(GUESTBOOK_PATH, JSON.stringify([newEntry]), err => {
-          if (err) throw err;
+
+  //Gästbokens data och hantering av eventuella fel
+  fs.readFile(GUESTBOOK_PATH, (err, data) => {
+    if (err) {
+    
+      if (err.code === 'ENOENT') {
+        fs.writeFile(GUESTBOOK_PATH, JSON.stringify([newEntry]), (writeErr) => {
+          if (writeErr) {
+            console.error('Kunde inte skapa filen:', writeErr);
+            return res.status(500).send('Ett serverfel uppstod.');
+          }
           console.log('Inlägg sparat.');
+          res.redirect('/');
         });
-      } else if (data) {
+      } else {
        
+        console.error('Fel vid läsning av filen:', err);
+        return res.status(500).send('Ett serverfel uppstod.');
+      }
+    } else {
+      // lägg till en ny inlägg
+      try {
         const entries = JSON.parse(data);
         entries.push(newEntry);
-        fs.writeFile(GUESTBOOK_PATH, JSON.stringify(entries), err => {
-          if (err) throw err;
+        fs.writeFile(GUESTBOOK_PATH, JSON.stringify(entries), (writeErr) => {
+          if (writeErr) {
+            console.error('Kunde inte skriva till filen:', writeErr);
+            return res.status(500).send('Ett serverfel uppstod.');
+          }
           console.log('Inlägg tillagt.');
+          res.redirect('/');
         });
+      } catch (parseErr) {
+        
+        console.error('Kunde inte tolka data som JSON:', parseErr);
+        return res.status(500).send('Ett fel uppstod.');
       }
-    });
-  
-    res.redirect('/');
+    }
   });
-
+});
+      
   app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servern körs på port ${PORT}`);
 });
